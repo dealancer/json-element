@@ -1,0 +1,31 @@
+<head>
+  <script type="module" src="dist/bundle.js"></script>
+</head>
+<body>
+
+  <json-component data='{
+    "fruits": [ "apple", "orange", "pear" ],
+    "vegetables": [
+      {
+        "veggieName": "potato",
+        "veggieLike": true
+      },
+      {
+        "veggieName": "broccoli",
+        "veggieLike": false
+      }
+    ]
+  }'></json-component>
+
+  <json-component data='{
+    "vegetables": [
+      {
+        "veggieName": "letuce",
+        "veggieLike": true
+      }
+    ]
+  }'></json-component>
+
+  <json-component></json-component>
+
+</body>

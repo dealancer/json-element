@@ -1,0 +1,81 @@
+import { LitElement, html } from 'lit-element';
+import Ajv from 'ajv';
+
+class JsonComponent extends LitElement {
+  static get schema() {
+    // https://json-schema.org/learn/miscellaneous-examples.html
+    return {
+      "$id": "https://example.com/arrays.schema.json",
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "description": "A representation of a person, company, organization, or place",
+      "type": "object",
+      "properties": {
+        "bar": { "type": "string", "default": "baz" },
+        "fruits": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": ["default"]
+        },
+        "vegetables": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/veggie" }
+        }
+      },
+      "definitions": {
+        "veggie": {
+          "type": "object",
+          "required": [ "veggieName", "veggieLike" ],
+          "properties": {
+            "veggieName": {
+              "type": "string",
+              "description": "The name of the vegetable."
+            },
+            "veggieLike": {
+              "type": "boolean",
+              "description": "Do I like this vegetable?"
+            }
+          }
+        }
+      }
+    }
+  }
+
+  static get properties() {
+    return {
+      data: { type: Object }
+    };
+  }
+
+  render() {
+    var ajv = new Ajv({ useDefaults: true });
+
+    if (!ajv.validate(JsonComponent.schema, this.data)) {
+      return html`
+        <h2>Fruits and veggies</h2>
+        Invalid data!
+      `;
+    }
+  
+    return html`
+      <h2>Fruits and veggies</h2>
+      <p>Fruits:</p>
+      ${this.data.fruits?
+        html`<ul>
+          ${this.data.fruits.map(i => html`<li>${i}</li>`)}
+        </ul>`:
+        html`-`
+      }
+      <p>Veggies:<p>
+      ${this.data.vegetables?
+        html`<ul>
+          ${this.data.vegetables.map(i => html`<li>${i.veggieName} ${i.veggieLike?html`❤️`:''}</li>`)}
+        </ul>`:
+        html`-`
+      }
+    `;
+  }
+}
+
+customElements.define('json-component', JsonComponent);
