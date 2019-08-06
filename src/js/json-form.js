@@ -9,7 +9,7 @@ class JsonForm extends LitElement {
 
   static get properties() {
     return {
-      data: { type: Object }
+      data: { type: Object, reflect: true }
     };
   }
 
@@ -17,11 +17,37 @@ class JsonForm extends LitElement {
     return unsafeCSS(require('brutusin-json-forms/src/css/brutusin-json-forms.css').toString());
   }
 
-  render() {
-    var BrutusinForms = window.brutusin["json-forms"];
-    var bf = BrutusinForms.create(JsonForm.schema); 
+  constructor() {
+    super();
 
-    bf.render(this.shadowRoot, this.data);
+    var BrutusinForms = window.brutusin["json-forms"];
+    this.bf = BrutusinForms.create(JsonForm.schema);
+  }
+
+  render() {
+    return html`
+      <div id="form"></div>
+      <button @click="${this.reflectData}">Apply</button>
+      <button @click="${this.showForm}">Reset</button>
+    `;  
+  }
+
+  updated() {
+    this.showForm();
+  }
+
+  showForm() {
+    var form = this.shadowRoot.querySelector('#form');
+    if (form) {
+      form.innerHTML = '';
+      this.bf.render(form, this.data);
+    }
+  }
+
+  reflectData() {
+    if (this.bf.validate()) {
+      this.data = this.bf.getData();
+    }
   }
 }
 
