@@ -5,9 +5,14 @@
   "main": "json-component.js",
   "dependencies": {
     "ajv": "^6.10.2",
+    "brutusin-json-forms": "0.0.0",
     "lit-element": "^2.2.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "css-loader": "^3.2.0",
+    "style-loader": "^1.0.0",
+    "to-string-loader": "^1.1.5"
+  },
   "scripts": {
     "watch": "webpack --watch",
     "build": "webpack",

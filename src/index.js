@@ -1,1 +1,0 @@
-import './json-component';

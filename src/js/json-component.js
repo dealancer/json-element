@@ -18,13 +18,11 @@ class JsonComponent extends LitElement {
 
     if (!ajv.validate(JsonComponent.schema, this.data)) {
       return html`
-        <h2>Fruits and veggies</h2>
         Invalid data!
       `;
     }
   
     return html`
-      <h2>Fruits and veggies</h2>
       <p>Fruits:</p>
       ${this.data.fruits?
         html`<ul>

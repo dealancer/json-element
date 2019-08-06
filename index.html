@@ -3,6 +3,7 @@
 </head>
 <body>
 
+  <h2>JSON component</h2>
   <json-component data='{
     "fruits": [ "apple", "orange", "pear" ],
     "vegetables": [
@@ -16,7 +17,21 @@
       }
     ]
   }'></json-component>
-
+  <json-form data='{
+    "fruits": [ "apple", "orange", "pear" ],
+    "vegetables": [
+      {
+        "veggieName": "potato",
+        "veggieLike": true
+      },
+      {
+        "veggieName": "broccoli",
+        "veggieLike": false
+      }
+    ]
+  }'></json-form>
+  
+  <h2>JSON component (partial data)</h2>
   <json-component data='{
     "vegetables": [
       {
@@ -25,7 +40,17 @@
       }
     ]
   }'></json-component>
+  <json-form data='{
+    "vegetables": [
+      {
+        "veggieName": "letuce",
+        "veggieLike": true
+      }
+    ]
+  }'></json-form>
 
+  <h2>JSON component (no data)</h2>
   <json-component></json-component>
+  <json-form></json-form>
 
 </body>
