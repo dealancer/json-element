@@ -1,45 +1,10 @@
 import { LitElement, html } from 'lit-element';
+import { JSON_SCHEMA } from './json-schema'
 import Ajv from 'ajv';
 
 class JsonComponent extends LitElement {
   static get schema() {
-    // https://json-schema.org/learn/miscellaneous-examples.html
-    return {
-      "$id": "https://example.com/arrays.schema.json",
-      "$schema": "http://json-schema.org/draft-07/schema#",
-      "description": "A representation of a person, company, organization, or place",
-      "type": "object",
-      "properties": {
-        "bar": { "type": "string", "default": "baz" },
-        "fruits": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "default": ["default"]
-        },
-        "vegetables": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/veggie" }
-        }
-      },
-      "definitions": {
-        "veggie": {
-          "type": "object",
-          "required": [ "veggieName", "veggieLike" ],
-          "properties": {
-            "veggieName": {
-              "type": "string",
-              "description": "The name of the vegetable."
-            },
-            "veggieLike": {
-              "type": "boolean",
-              "description": "Do I like this vegetable?"
-            }
-          }
-        }
-      }
-    }
+    return JSON_SCHEMA;
   }
 
   static get properties() {
