@@ -1,10 +1,15 @@
+<!doctype html>
+
+<html lang="en">
 <head>
-  <script type="module" src="dist/bundle.js"></script>
+  <meta charset="utf-8">
+
+  <title>JSON Component PoC</title>
 </head>
 <body>
 
-  <h2>JSON component</h2>
-  <json-component data='{
+  <h2>JSON Component</h2>
+  <json-component id="component" data='{
     "fruits": [ "apple", "orange", "pear" ],
     "vegetables": [
       {
@@ -17,40 +22,10 @@
       }
     ]
   }'></json-component>
-  <json-form data='{
-    "fruits": [ "apple", "orange", "pear" ],
-    "vegetables": [
-      {
-        "veggieName": "potato",
-        "veggieLike": true
-      },
-      {
-        "veggieName": "broccoli",
-        "veggieLike": false
-      }
-    ]
-  }'></json-form>
-  
-  <h2>JSON component (partial data)</h2>
-  <json-component data='{
-    "vegetables": [
-      {
-        "veggieName": "letuce",
-        "veggieLike": true
-      }
-    ]
-  }'></json-component>
-  <json-form data='{
-    "vegetables": [
-      {
-        "veggieName": "letuce",
-        "veggieLike": true
-      }
-    ]
-  }'></json-form>
 
-  <h2>JSON component (no data)</h2>
-  <json-component></json-component>
-  <json-form></json-form>
+  <h2>JSON Form</h2>
+  <json-form id="form"></json-form>
 
+  <script type="module" src="dist/bundle.js"></script>
 </body>
+</html>

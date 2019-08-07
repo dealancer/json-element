@@ -1,5 +1,5 @@
 import { schema } from './json-schema';
-import { LitElement, html, css, unsafeCSS } from 'lit-element';
+import { LitElement, html, unsafeCSS } from 'lit-element';
 import 'brutusin-json-forms';
 const CSS = require('brutusin-json-forms/src/css/brutusin-json-forms.css').toString();
 
