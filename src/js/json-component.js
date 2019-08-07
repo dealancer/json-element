@@ -1,10 +1,10 @@
+import { schema } from './json-schema';
 import { LitElement, html } from 'lit-element';
-import { JSON_SCHEMA } from './json-schema'
 import Ajv from 'ajv';
 
 class JsonComponent extends LitElement {
   static get schema() {
-    return JSON_SCHEMA;
+    return schema();
   }
 
   static get properties() {

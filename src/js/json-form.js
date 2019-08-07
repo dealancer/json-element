@@ -1,10 +1,12 @@
+import { schema } from './json-schema';
 import { LitElement, html, css, unsafeCSS } from 'lit-element';
-import { JSON_SCHEMA } from './json-schema';
 import 'brutusin-json-forms';
+const CSS = require('brutusin-json-forms/src/css/brutusin-json-forms.css').toString();
+
 
 class JsonForm extends LitElement {
   static get schema() {
-    return JSON_SCHEMA;
+    return schema();
   }
 
   static get properties() {
@@ -14,7 +16,7 @@ class JsonForm extends LitElement {
   }
 
   static get styles() {
-    return unsafeCSS(require('brutusin-json-forms/src/css/brutusin-json-forms.css').toString());
+    return unsafeCSS(CSS);
   }
 
   constructor() {
