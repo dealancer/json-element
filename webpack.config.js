@@ -5,12 +5,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/i,
-        exclude: /brutusin-json-forms\/src\/css\/brutusin-json-forms.css$/i,
+        test: /\.(png|jpe?g|gif|svg)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 8192,
+          publicPath: 'dist',
+        }
+      },
+      {
+        test: /.\/src\/css\/style.css$/i,
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /brutusin-json-forms\/src\/css\/brutusin-json-forms.css$/i,
+        test: [/brutusin-json-forms\/dist\/css\/brutusin-json-forms.min.css$/i, /jsoneditor\/dist\/jsoneditor.min.css$/i],
         use: ['to-string-loader', 'css-loader'],
       },
     ],

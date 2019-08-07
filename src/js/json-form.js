@@ -1,7 +1,7 @@
 import { schema } from './json-schema';
 import { LitElement, html, unsafeCSS } from 'lit-element';
 import 'brutusin-json-forms';
-const CSS = require('brutusin-json-forms/src/css/brutusin-json-forms.css').toString();
+const CSS = require('brutusin-json-forms/dist/css/brutusin-json-forms.min.css').toString();
 
 
 class JsonForm extends LitElement {

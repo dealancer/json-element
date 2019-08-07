@@ -6,7 +6,10 @@
   "dependencies": {
     "ajv": "^6.10.2",
     "brutusin-json-forms": "0.0.0",
-    "lit-element": "^2.2.1"
+    "file-loader": "^4.1.0",
+    "jsoneditor": "^6.2.1",
+    "lit-element": "^2.2.1",
+    "url-loader": "^2.1.0"
   },
   "devDependencies": {
     "css-loader": "^3.2.0",
