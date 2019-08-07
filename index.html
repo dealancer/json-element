@@ -4,30 +4,39 @@
 <head>
   <meta charset="utf-8">
 
-  <title>JSON Component PoC</title>
+  <title>JSON Component Demo</title>
 </head>
 <body>
-  <h2>JSON Component</h2>
-  <json-component id="component" data='{
-    "fruits": [ "apple", "orange", "pear" ],
-    "vegetables": [
-      {
-        "veggieName": "potato",
-        "veggieLike": true
-      },
-      {
-        "veggieName": "broccoli",
-        "veggieLike": false
-      }
-    ]
-  }'></json-component>
+  <h1>JSON Component Demo</h1>
+  <div class="container" role="main">
+    <div>
+      <h2>JSON Component</h2>
+      <json-component id="component" data='{
+        "fruits": [ "apple", "orange", "pear" ],
+        "vegetables": [
+          {
+            "veggieName": "potato",
+            "veggieLike": true
+          },
+          {
+            "veggieName": "broccoli",
+            "veggieLike": false
+          }
+        ]
+      }'></json-component>
+    </div>
 
-  <h2>JSON Form</h2>
-  <json-form id="form"></json-form>
+    <div>
+      <h2>JSON Form</h2>
+      <json-form id="form"></json-form>
+    </div>
 
-  <h2>JSON Editor</h2>
-  <json-editor id="editor"></json-editor>
+    <div>
+      <h2>JSON Editor</h2>
+      <json-editor id="editor"></json-editor>
+    </div>
 
-  <script type="module" src="dist/bundle.js?3"></script>
+    <script type="module" src="dist/bundle.js?3"></script>
+  </div>
 </body>
 </html>

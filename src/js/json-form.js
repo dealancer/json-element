@@ -29,8 +29,11 @@ class JsonForm extends LitElement {
   render() {
     return html`
       <div id="form"></div>
-      <button @click="${this.reflectData}">Apply</button>
-      <button @click="${this.showForm}">Reset</button>
+      <br>
+      <div>
+        <button @click="${this.reflectData}">Apply</button>
+        <button @click="${this.showForm}">Reset</button>
+      </div>
     `;  
   }
 

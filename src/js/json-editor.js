@@ -21,8 +21,11 @@ class JsonEditor extends LitElement {
   render() {
     return html`
       <div id="editor"></div>
-      <button @click="${this.reflectData}">Apply</button>
-      <button @click="${this.showEditor}">Reset</button>
+      <br>
+      <div>
+        <button @click="${this.reflectData}">Apply</button>
+        <button @click="${this.showEditor}">Reset</button>
+      </div>
     `;  
   }
 
