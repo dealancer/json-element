@@ -6,13 +6,11 @@ export const JSON_SCHEMA = {
   "description": "A representation of a person, company, organization, or place",
   "type": "object",
   "properties": {
-    "bar": { "type": "string", "default": "baz" },
     "fruits": {
       "type": "array",
       "items": {
         "type": "string"
-      },
-      "default": ["default"]
+      }
     },
     "vegetables": {
       "type": "array",
