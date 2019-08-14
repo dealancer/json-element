@@ -6,10 +6,14 @@ import '../css/style.css';
 
 
 var component = document.getElementById('component');
+
 var form = document.getElementById('form');
 var editor = document.getElementById('editor');
 
+form.schema = component.constructor.schema;
 form.setAttribute('data', component.getAttribute('data'));
+
+editor.schema = component.constructor.schema;
 editor.setAttribute('data', component.getAttribute('data'));
 
 

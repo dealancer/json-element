@@ -1,13 +1,8 @@
-import { schema } from './json-schema';
 import { LitElement, html, unsafeCSS } from 'lit-element';
 import JSONEditor from 'jsoneditor';
 const CSS = require('jsoneditor/dist/jsoneditor.min.css').toString();
 
 class JsonEditor extends LitElement {
-  static get schema() {
-    return schema();
-  }
-
   static get properties() {
     return {
       data: { type: Object, reflect: true }
@@ -16,6 +11,14 @@ class JsonEditor extends LitElement {
 
   static get styles() {
     return unsafeCSS(CSS);
+  }
+
+  get schema() {
+    return this._schema;
+  }
+
+  set schema(schema) {
+    this._schema = schema;
   }
 
   render() {
@@ -39,7 +42,7 @@ class JsonEditor extends LitElement {
       if (editor.innerHTML.trim() == '') {
         this.editor = new JSONEditor(editor, {
           mode: 'text',
-          schema: JsonEditor.schema,
+          schema: this.schema,
         });
       }
       this.editor.set(this.data);

@@ -1,14 +1,9 @@
-import { schema } from './json-schema';
 import { LitElement, html, unsafeCSS } from 'lit-element';
 import 'brutusin-json-forms';
 const CSS = require('brutusin-json-forms/dist/css/brutusin-json-forms.min.css').toString();
 
 
 class JsonForm extends LitElement {
-  static get schema() {
-    return schema();
-  }
-
   static get properties() {
     return {
       data: { type: Object, reflect: true }
@@ -22,8 +17,20 @@ class JsonForm extends LitElement {
   constructor() {
     super();
 
+    this.schema = {};
+  }
+
+  get schema() {
+    return this._schema;
+  }
+
+  set schema(schema) {
+    this._schema = schema;
+
     var BrutusinForms = window.brutusin["json-forms"];
-    this.bf = BrutusinForms.create(JsonForm.schema);
+    this.bf = BrutusinForms.create(this._schema);
+
+    this.render();
   }
 
   render() {
