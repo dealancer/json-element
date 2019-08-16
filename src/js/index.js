@@ -8,10 +8,8 @@ import './json-editor';
 import '../css/style.css';
 const COMPONENT_CSS = require('../css/component.css').toString();
 
-
 SharedStyles.styles = unsafeCSS(COMPONENT_CSS);
 customElements.define('json-component', JCExamle);
-
 
 var component = document.getElementById('component');
 
@@ -23,7 +21,6 @@ form.setAttribute('data', component.getAttribute('data'));
 
 editor.schema = component.constructor.schema;
 editor.setAttribute('data', component.getAttribute('data'));
-
 
 new MutationObserver(function(mutations) {
   component.setAttribute('data', form.getAttribute('data'));

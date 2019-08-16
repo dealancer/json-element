@@ -15,12 +15,27 @@ class JsonComponent extends LitElement {
 
   static get properties() {
     return {
+      src: { type: String },
       data: { type: Object, reflect: true }
     };
   }
 
   static get styles() {
     return css`${SharedStyles.styles}`;
+  }
+
+  updated(changed) {
+    if (changed.has("src")) {
+      var self = this;
+
+      fetch(`${this.src}`)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        self.data = data;
+      });
+    }
   }
 
   isValid() {
