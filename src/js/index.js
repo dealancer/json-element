@@ -1,8 +1,16 @@
-import './json-component';
+import { css, unsafeCSS } from 'lit-element';
+
+import SharedStyles from './shared-styles';
+import JCExamle from './jc-example';
 import './json-form';
 import './json-editor';
 
 import '../css/style.css';
+const COMPONENT_CSS = require('../css/component.css').toString();
+
+
+SharedStyles.styles = unsafeCSS(COMPONENT_CSS);
+customElements.define('json-component', JCExamle);
 
 
 var component = document.getElementById('component');

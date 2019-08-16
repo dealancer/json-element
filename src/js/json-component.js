@@ -1,43 +1,16 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, css, html } from 'lit-element';
+import SharedStyles from './shared-styles'
 import Ajv from 'ajv';
 
 class JsonComponent extends LitElement {
+  constructor() {
+    super();
+
+    this.ajv = new Ajv({ useDefaults: true })
+  }
+
   static get schema() {
-    return {
-      "$id": "https://example.com/arrays.schema.json",
-      "$schema": "http://json-schema.org/draft-07/schema#",
-      "description": "A representation of a person, company, organization, or place",
-      "type": "object",
-      "properties": {
-        "fruits": {
-          "type": "array",
-          "items": {
-            "type": "string",
-          },
-          "default": ["default"],
-        },
-        "vegetables": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/veggie" }
-        }
-      },
-      "definitions": {
-        "veggie": {
-          "type": "object",
-          "required": [ "veggieName", "veggieLike" ],
-          "properties": {
-            "veggieName": {
-              "type": "string",
-              "description": "The name of the vegetable."
-            },
-            "veggieLike": {
-              "type": "boolean",
-              "description": "Do I like this vegetable?"
-            }
-          }
-        }
-      }
-    };
+    return {};
   }
 
   static get properties() {
@@ -46,32 +19,13 @@ class JsonComponent extends LitElement {
     };
   }
 
-  render() {
-    var ajv = new Ajv({ useDefaults: true });
+  static get styles() {
+    return css`${SharedStyles.styles}`;
+  }
 
-    if (!ajv.validate(JsonComponent.schema, this.data)) {
-      return html`
-        Invalid data!
-      `;
-    }
-  
-    return html`
-      <p>Fruits:</p>
-      ${this.data.fruits?
-        html`<ul>
-          ${this.data.fruits.map(i => html`<li>${i}</li>`)}
-        </ul>`:
-        html`-`
-      }
-      <p>Veggies:<p>
-      ${this.data.vegetables?
-        html`<ul>
-          ${this.data.vegetables.map(i => html`<li>${i.veggieName} ${i.veggieLike?html`❤️`:''}</li>`)}
-        </ul>`:
-        html`-`
-      }
-    `;
+  isValid() {
+    return this.ajv.validate(this.constructor.schema, this.data);
   }
 }
 
-customElements.define('json-component', JsonComponent);
+export default JsonComponent;

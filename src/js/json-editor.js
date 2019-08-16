@@ -29,7 +29,7 @@ class JsonEditor extends LitElement {
         <button @click="${this.reflectData}">Apply</button>
         <button @click="${this.showEditor}">Reset</button>
       </div>
-    `;  
+    `;
   }
 
   updated() {
