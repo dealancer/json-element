@@ -10,7 +10,7 @@ const COMPONENT_CSS = require('../css/component.css').toString();
  * Load component shared styles and define name of the component.
  */
 SharedStyles.styles = unsafeCSS(COMPONENT_CSS);
-customElements.define('json-component', JCExamle);
+customElements.define('jc-example', JCExamle);
 
 /*
  * Ensure schema and data are syncrhonized among the components.
