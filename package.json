@@ -17,8 +17,8 @@
     "to-string-loader": "^1.1.5"
   },
   "scripts": {
-    "demo-watch": "webpack --config=demo.webpack.config.js",
     "demo-watch": "webpack --config=demo.webpack.config.js --watch",
+    "demo-build": "webpack --config=demo.webpack.config.js",
     "watch": "webpack --watch",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
