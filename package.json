@@ -17,10 +17,21 @@
     "to-string-loader": "^1.1.5"
   },
   "scripts": {
+    "demo-watch": "webpack --config=demo.webpack.config.js",
+    "demo-watch": "webpack --config=demo.webpack.config.js --watch",
     "watch": "webpack --watch",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Vadym Myrgorod",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dealancer/json-component.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/dealancer/json-component/issues"
+  },
+  "homepage": "https://github.com/dealancer/json-component#readme"
 }

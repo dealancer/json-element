@@ -1,4 +1,4 @@
-import JsonComponent from './json-component';
+import JsonComponent from '../../../src/js/json-component';
 import { css, html } from 'lit-element';
 import Ajv from 'ajv';
 
