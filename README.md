@@ -1,4 +1,4 @@
-# json-component
+# json-element
 Proof of concept of JSON Schema based Web Component
 
 # See the demo

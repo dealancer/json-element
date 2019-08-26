@@ -2,7 +2,7 @@ import { LitElement, css, html } from 'lit-element';
 import SharedStyles from './shared-styles'
 import Ajv from 'ajv';
 
-class JsonComponent extends LitElement {
+class JsonElement extends LitElement {
   constructor() {
     super();
 
@@ -43,4 +43,4 @@ class JsonComponent extends LitElement {
   }
 }
 
-export default JsonComponent;
+export default JsonElement;

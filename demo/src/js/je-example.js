@@ -1,8 +1,8 @@
-import JsonComponent from '../../../src/js/json-component';
+import JsonElement from '../../../src/js/json-element';
 import { css, html } from 'lit-element';
 import Ajv from 'ajv';
 
-class JCExamle extends JsonComponent {
+class JEExamle extends JsonElement {
   static get schema() {
     return {
       "$id": "https://example.com/arrays.schema.json",
@@ -43,7 +43,7 @@ class JCExamle extends JsonComponent {
 
   static get styles() {
     return css`
-      ${JsonComponent.styles}
+      ${JsonElement.styles}
 
       :host {
         font-weight: bold;
@@ -77,4 +77,4 @@ class JCExamle extends JsonComponent {
   }
 }
 
-export default JCExamle;
+export default JEExamle;

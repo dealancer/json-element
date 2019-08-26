@@ -3,15 +3,15 @@ import SharedStyles from '../../../src/js/shared-styles';
 import '../../../src/js/json-form';
 import '../../../src/js/json-editor';
 import '../css/style.css';
-import JCExamle from './jc-example';
+import JEExamle from './je-example';
 
-const COMPONENT_CSS = require('../css/component.css').toString();
+const COMPONENT_CSS = require('../css/element.css').toString();
 
 /*
  * Load component shared styles and define name of the component.
  */
 SharedStyles.styles = unsafeCSS(COMPONENT_CSS);
-customElements.define('jc-example', JCExamle);
+customElements.define('jc-example', JEExamle);
 
 /*
  * Ensure schema and data are syncrhonized among the components.

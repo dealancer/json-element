@@ -17,7 +17,7 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: [/brutusin-json-forms\/dist\/css\/brutusin-json-forms.min.css$/i, /jsoneditor\/dist\/jsoneditor.min.css$/i, /.\/src\/css\/component.css$/i],
+        test: [/brutusin-json-forms\/dist\/css\/brutusin-json-forms.min.css$/i, /jsoneditor\/dist\/jsoneditor.min.css$/i, /.\/src\/css\/element.css$/i],
         use: ['to-string-loader', 'css-loader'],
       },
     ],
