@@ -10,7 +10,7 @@ The idea behind this project is to integrate [JSON Schema](https://github.com/br
 
 ![Screenshot](https://github.com/dealancer/json-element/raw/master/assets/img/screenshot.png)
 
-## Demo
+## Setup
 
 1. Run `npm install`
 2. Run `npm run demo-watch`
