@@ -4,17 +4,17 @@ The idea behind this project is to integrate [JSON Schema](https://github.com/br
 
 ## Dependencies
 
-* [Lit Element](https://lit-element.polymer-project.org) - component base
+* [LitElement](https://lit-element.polymer-project.org) - component base
 * [json-forms](https://github.com/brutusin/json-forms) - form generation
-
 
 ![Screenshot](https://github.com/dealancer/json-element/raw/master/assets/img/screenshot.png)
 
-## Setup
+## Running Demo
+
+Check out `demo` directory for an example.
 
 1. Run `npm install`
 2. Run `npm run demo-watch`
 3. Run `http-server`
 4. Navigate `http://localhost:<port>/demo/`
-
 
