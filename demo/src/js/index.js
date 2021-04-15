@@ -8,29 +8,29 @@ import JEExamle from './je-example';
 const COMPONENT_CSS = require('../css/element.css').toString();
 
 /*
- * Load component shared styles and define name of the component.
+ * Load element shared styles and define name of the eleme nt.
  */
 SharedStyles.styles = unsafeCSS(COMPONENT_CSS);
 customElements.define('jc-example', JEExamle);
 
 /*
- * Ensure schema and data are syncrhonized among the components.
+ * Ensure schema and data are syncrhonized.
  */
-var component = document.getElementById('component');
+var element = document.getElementById('element');
 var form = document.getElementById('form');
 var editor = document.getElementById('editor');
-form.schema = component.constructor.schema;
-form.setAttribute('data', component.getAttribute('data'));
-editor.schema = component.constructor.schema;
-editor.setAttribute('data', component.getAttribute('data'));
+form.schema = element.constructor.schema;
+form.setAttribute('data', element.getAttribute('data'));
+editor.schema = element.constructor.schema;
+editor.setAttribute('data', element.getAttribute('data'));
 
 /*
- * Bind component, form, and editor to each other.
+ * Bind element, form, and editor to each other.
  */
 var data = form.getAttribute('data');
 function updateData() {
-  if (component.getAttribute('data') !== data) {
-    component.setAttribute('data', data);
+  if (element.getAttribute('data') !== data) {
+    element.setAttribute('data', data);
   }
   if (form.getAttribute('data') !== data) {
     form.setAttribute('data', data);
@@ -40,9 +40,9 @@ function updateData() {
   }
 }
 new MutationObserver(function(mutations) {
-  data = component.getAttribute('data');
+  data = element.getAttribute('data');
   updateData();
-}).observe(component, {
+}).observe(element, {
   attributes: true,
   attributeFilter: ['data']
 });
